@@ -21,8 +21,10 @@ app.use(error.errorMiddlewareHandler);
 app.use(express.json());
 
 // routes
+const booksRoute = require("./routes/booksRoute");
 const usersRoute = require("./routes/usersRoute");
 
+app.use("/api/books", booksRoute);
 app.use("/api/users", usersRoute);
 
 // server
